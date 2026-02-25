@@ -3,7 +3,7 @@ package com.poolshark
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.poolcoach.ui.navigation.PoolCoachNavGraph
+import com.poolshark.ui.navigation.PoolCoachNavGraph
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
