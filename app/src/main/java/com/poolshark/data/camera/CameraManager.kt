@@ -31,8 +31,9 @@ class CameraManager @Inject constructor(@ApplicationContext private val context:
     val snapshots: SharedFlow<Bitmap> = _snapshots
 
     fun bindCamera(lifecycleOwner: LifecycleOwner, previewView: PreviewView) {
-        ProcessCameraProvider.getInstance(context).addListener({
-            val provider = it as ProcessCameraProvider
+        val future = ProcessCameraProvider.getInstance(context)
+        future.addListener({
+            val provider = future.get()
             provider.unbindAll()
             val preview = Preview.Builder().build().also { p ->
                 p.setSurfaceProvider(previewView.surfaceProvider)
